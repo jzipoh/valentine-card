@@ -15,20 +15,27 @@
     }
 
     .card {
-      max-width: 420px;
+      max-width: 700px;
       background: white;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: flex;
       animation: fadeIn 1.2s ease;
     }
 
-    img {
+    .image {
+      width: 50%;
+    }
+
+    .image img {
       width: 100%;
-      display: block;
+      height: 100%;
+      object-fit: cover;
     }
 
     .text {
+      width: 50%;
       padding: 22px;
       line-height: 1.6;
       color: #333;
@@ -44,16 +51,29 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* Mobile layout */
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+      }
+
+      .image, .text {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="card">
 
-    <img src="Valentine.png">
+    <div class="image">
+      <img src="Valentine.png">
+    </div>
 
     <div class="text">
-      <h2>Happy Valentine’s Day</h2>
+      <h2>Happy Valentine’s Day.</h2>
 
       <p>Recently I’ve been thinking about this whole “growing” thing.</p>
 
@@ -65,4 +85,13 @@
 
       <p>So… thank you. For understanding me, and for being patient with me.</p>
 
-      <p>I know I don’t always get things right,
+      <p>I know I don’t always get things right, but I do want to keep trying.</p>
+
+      <p>And I want to keep growing with you.</p>
+
+      <p style="margin-top:20px; opacity:0.6;">— from me</p>
+    </div>
+
+  </div>
+</body>
+</html>
